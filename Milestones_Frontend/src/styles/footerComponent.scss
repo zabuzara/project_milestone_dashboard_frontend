@@ -1,0 +1,33 @@
+.footerContainer {
+    width: 100%;
+    border-top:1px solid black;
+    background-color: white;
+    z-index:999;
+
+    &-columns {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        &-left, &-right {
+            width: 50%;
+            padding: 5px;
+
+            &-items {
+                list-style: none;
+
+                &-item {
+                    margin: 2px 0;
+
+                    &:hover,&:focus{
+                        background-color: #00000056;
+                    }
+                }
+            }
+        }
+
+        &-right {
+            border-left: 1px dotted black;
+        }
+    }
+}

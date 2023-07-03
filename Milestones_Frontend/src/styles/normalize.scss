@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: auto;
+    font-family:monospace;
+}
+html, body, #root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    position: relative;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 1rem;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #aaa;
+        cursor: pointer !important;
+    }
+}
+
+.App {
+    width: 100%;
+    min-width: 350px;
+    position: relative;
+    text-rendering: optimizeLegibility;
+}

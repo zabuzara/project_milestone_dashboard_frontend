@@ -1,0 +1,33 @@
+trigger:
+- main
+
+pool:
+  name: JAEMACOM_Doc
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.18.0'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd Milestones_Frontend
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/Milestones_Frontend/build' 
+    includeRootFolder: false 
+    archiveType: 'zip' # Options: zip, 7z, tar, wim
+    tarCompression: 'gz' # Optional. Options: gz, bz2, xz, none
+    archiveFile: '$(Build.ArtifactStagingDirectory)/milestones-frontend.zip' 
+    replaceExistingArchive: true 
+
+- publish: $(Build.ArtifactStagingDirectory)
+  artifact: milestones-frontend
+

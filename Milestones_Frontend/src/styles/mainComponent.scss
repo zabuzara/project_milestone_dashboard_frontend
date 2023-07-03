@@ -1,0 +1,87 @@
+@import 'membersPage';
+@import 'notFoundPage';
+@import 'overviewPage';
+
+.mainContainer {
+    width: 100%;
+    height:100%;
+    flex:1;
+}
+
+.membersContainer-crudMessage {
+    width: fit-content;
+    margin: 0 auto 10px auto;
+    padding: 5px 30px;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    background-color: orange;
+    font-weight: bold;
+    color: white;
+    position: sticky;
+    top: 155px;
+    z-index: 1000;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    background-color: black;
+}
+
+.ganttContainer-crudMessage {
+    width: fit-content;
+    margin: 0 auto 15px auto;
+    padding: 5px 30px;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    background-color: orange;
+    font-weight: bold;
+    color: white;
+    position: sticky;
+    top: 205px;
+    z-index: 1000;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    background-color: black;
+}
+
+.addNew {
+    min-width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    border: 1px dashed gray;
+    border-radius: 0.5rem;
+    font-family: monospace;
+    transition: 0.2s ease-in-out;
+    align-self: center;
+    text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+    background-color: transparent;
+    padding: 5px;
+
+    &:hover, &:focus {
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        box-shadow: 0 0 3px 1px black;
+        border: 1px solid gray;
+    }
+}
+
+button:hover, button:focus {
+    transform: scale(1.01);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    filter: grayscale(0%);
+    opacity: 1;
+    animation: shakyIcon;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes shakyIcon {
+    0% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

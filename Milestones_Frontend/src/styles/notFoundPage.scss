@@ -1,0 +1,129 @@
+$stone_size : 38px;
+$stone_position: calc(100% - 38px);
+$head1_duration_time : 15s;
+$head2_duration_time : 20s;
+
+.nopage-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+
+    &-message {
+        width: fit-content;
+        margin: 0 auto;
+        font-size: 2rem;
+        padding: 5rem;
+        background-color: #cccccc;
+        color: gray;
+        border-radius: 2rem;
+        position: relative;
+        box-shadow: inset 0 0 5px 2px black;
+
+        &:after {
+            content: ':(';
+            color: black;
+            position: absolute;
+            transform: rotate(90deg);
+            z-index: 1;
+            transition: all 0.3s;
+            left: 0;
+            top: 0;
+            display: block;
+            background-color: #00ff90;
+            width: $stone_size;
+            height: $stone_size;
+            border-radius: 2rem;
+            box-shadow: 0 0 4px 2px black;
+            animation: head1;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-duration: $head1_duration_time;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+        }
+
+        &:before {
+            content: ':)';
+            color: black;
+            position: absolute;
+            transform: rotate(90deg);
+            z-index: 1;
+            transition: all 0.3s;
+            left: 0;
+            top: 0;
+            display: block;
+            background-color: #b6ff00;
+            width: $stone_size;
+            height: $stone_size;
+            border-radius: 2rem;
+            box-shadow: 0 0 4px 2px black;
+            animation: head2;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-duration: $head2_duration_time;
+            animation-direction: alternate;
+            animation-fill-mode: both;
+        }
+    }
+}
+
+@keyframes head1 {
+    0% {
+        left: 0;
+        top: 0;
+        background-color: #cccccc;
+        content: ':P';
+    }
+    25% {
+        left: $stone_position;
+        top: 0;
+        background-color: #b600ff;
+        content: ':(';
+    }
+    50% {
+        left: $stone_position;
+        top: $stone_position;
+        background-color: #ff6a00;
+        content: ':D';
+    }
+    75% {
+        left: 0;
+        top: $stone_position;
+        background-color: #ffd800;
+        content: ':P';
+    }
+}
+
+
+@keyframes head2 {
+    0% {
+        left: 0;
+        top: 0;
+        background-color: white;
+        content:':o';
+    }
+
+    25% {
+        left: $stone_position;
+        top: 0;
+        background-color: #00ffff;
+        content: ':P';
+    }
+
+    50% {
+        left: $stone_position;
+        top: $stone_position;
+        background-color: #0094ff;
+        content: ':o';
+    }
+
+    75% {
+        left: 0;
+        top: $stone_position;
+        background-color: #ddff00;
+        content: ':|';
+    }
+}

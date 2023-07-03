@@ -1,0 +1,120 @@
+
+.membersContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    height: auto;
+    word-break: break-word;
+
+    &-memberComponent {
+        margin: 10px;
+        border-radius: 1rem;
+        padding: 1rem;
+        font-family: monospace;
+        transition: 0.2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #ccccccbf;
+
+        &-messageBox {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 10px;
+
+            &-leftMessage {
+                width: fit-content;
+                height: fit-content;
+                display: block;
+                justify-self: right;
+                padding: 3px;
+                border-radius: 0.3rem;
+                background-color: #ff0000d7;
+                border: 1px solid #ff000037;
+                color: white;
+            }
+        }
+
+        &-contentContainer {
+            &-title {
+                color: gray;
+            }
+
+            &-content {
+                margin: 5px 0;
+
+
+                &.edit {
+                    background-color: white;
+                    color: black;
+                    padding: 3px;
+                    border-radius: 0.3rem;
+                    border: 1px solid #00000022
+                }
+            }
+
+            &-buttons {
+                display: flex;
+                justify-content: right;
+                background-color: transparent;
+
+                &-editButton,
+                &-cancelButton,
+                &-deleteButton {
+                    margin: 10px 0 0 0;
+                    border: none;
+                    border-radius: 0.5rem;
+                    font-size: 1rem;
+                    background-color: transparent;
+                    filter: grayscale(100%);
+                    opacity: 0.4;
+                    transition: 0.2s ease-in-out;
+
+                    &:hover, &:focus {
+                        transform: scale(1.01);
+                        transition: 0.2s ease-in-out;
+                        cursor: pointer;
+                        filter: grayscale(0%);
+                        opacity: 1;
+                        animation: shakyIcon;
+                        animation-duration: 0.3s;
+                        animation-iteration-count: 1;
+                        animation-timing-function: ease-in-out;
+                    }
+
+                    &-icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+
+            &-department {
+                margin: 5px 0;
+
+                &-edit {
+                    &-selection {
+                        width: 100%;
+                        background-color: white;
+                        padding: 4px 0;
+                        text-overflow: ellipsis;
+                        border-radius: 0.5rem;
+                        border: 1px solid #00000021;
+                        margin: 5px 0;
+
+                        &-option {
+                            padding: 2px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover, &:focus {
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 0 3px 1px black;
+        }
+    }
+}
